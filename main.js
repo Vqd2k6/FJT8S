@@ -1,5 +1,11 @@
-var firstName = "Vo" ; 
-var lastName = " Quang Dung" ;
+/**
+ * 0
+ * false 
+ * "" or ''
+ * undefined
+ * NaN
+ * null
+ * ====> đó là các giá trị của condition mang giá trị false trong câu lệnh if , nếu ngoài các giá trị kia thì auto sẽ là true , ví dụ if("Hello") sẽ trả về true.
+ */
 
-var fullName = firstName + lastName ;
-console.log(fullName)
+// còn lại giống logic của c++ 
