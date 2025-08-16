@@ -1,66 +1,44 @@
-// định nghĩa và sử dụng rất giống python, chỉ khác ở 1 số đặc điểm ở phía sau: 
-function test(parameter1, parameter2) {
-    console.log(parameter1)
-    console.log(parameter2)
+// =========== Các loại function ========
+
+// 1, Declaration function  
+
+function decFunc () // nó giống như func bình thường thôi 
+{
+    // Lưu ý là phải đặt tên , nếu không thì nó không phải là 1 declaration function 
 }
 
-// 1. nó sẽ tự lấp đầy những parameter trống bằng undefined.
+// 2, Expression function 
+//2,1 
+var value = function() {}    // nó sẽ được gán '=' cho 1 biến nào đó 
 
-test("hello", 2)
+//2,2 dạng callback 
 
-test("hallo")
-// nếu bạn định nghĩa có 2 para mà truyền 3 argu thì nó chỉ lấy 2 thằng argu đầu mà thôi 
+setTimeout(function (){
 
-// 2. Arguments , nếu func của bạn định nghĩa không có para thì khi bạn sử dụng nó , bạn vô tình truyền 1 or các argu bất kì vào , thì các argu sẽ được convert sang 'arguments'.
-function argu() {
-    console.log(arguments)
-}
-argu(1, 2, 3, 4)
-argu()
+}, 2000)
 
-// 3. for in arguments : 
-function forArgu() {
-    var string = ""
-    for (var argu of arguments)    // lấy ví dụ về ' for i in range(n) ' trong python , thì argu == i , arguments == range()
-    {
-        console.log(argu)
-        string += argu + '-'
-    }
-    console.log(string)
-}
+// 2,3 dạng object 
 
-forArgu(1, 2, 3)
+var myObject = {
+    keyFunc : function () {}
+}   
+
+// 2,4 : Bạn có thể đặt tên để cho dễ hiểu 
+
+var value = function val () {} 
 
 
+// ======== Khái niệm về hosting , sự khác biệt giữa declaration và expresstion function 
 
-//               Returrn 
-
-/* giống như trong python: 
-    - return ở đâu là xong ở đó 
-    - ở đây nếu không return sẽ trả về 'undefined'
- */
-
-//       Function plus 
-
-//1,  khi 2 hay nhiều func cùng tên thì func cuối cùng là cái sẽ được thực thi vì nó overide các func ở trước
-
-function temp () {
-    print()
-}
-temp()    // thứ tự định nghĩa không quan trọng , chỉ có xuất hiện trong file sẽ truy cập được. 
-
-function print () {
-    console.log("massage1")
+print() // Declaration bạn có thể sử dụng nó trên phần định nghĩa 
+function print() {
+    console.log( "Declaration !!!!!!")
 }
 
-function print () {
-    console.log("massage2")   // của sổ console bây giờ sẽ cho ra 'massage2'
+// còn với Expresstion thì bạn không thể , nó sẽ báo lỗi
+
+call()  // sẽ có thông báo lỗi ở đây 
+var call = function callPrint()
+{
+    console.log("Expresstion!!!!!!")
 }
-print()
-
-/*2, chúng ta có thể định nghĩa var , func trong 1 function: 
-    - Lưu ý: Vì tính private nên cả var và func chỉ có thể hoạt động nội bộ trong scope của function chứa nó mà thôi.
-*/
-
-
-
