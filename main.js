@@ -1,44 +1,20 @@
-// =========== Các loại function ========
+// Chúng ta sẽ học về       Arrow Function 
 
-// 1, Declaration function  
-
-function decFunc () // nó giống như func bình thường thôi 
-{
-    // Lưu ý là phải đặt tên , nếu không thì nó không phải là 1 declaration function 
+// This is Arrow Function ---- Anonymous Function 
+(a, b) => {     // không tên và ko key word function 
+    return a + b;     // ưu : ngắn gọn  || nhược : không gọi được     "(10,5) => sẽ không thực thi được"
 }
 
-// 2, Expression function 
-//2,1 
-var value = function() {}    // nó sẽ được gán '=' cho 1 biến nào đó 
+// self-running function 
 
-//2,2 dạng callback 
+(function () {         // nó sẽ chạy ngay và luôn , không cần đợi gọi 
+    console.log("Hello mọi người");
+})()
 
-setTimeout(function (){
+// Arrow function không thể gọi như bình thường nên ta phải tạo biến để hứng giá trị của function 
 
-}, 2000)
-
-// 2,3 dạng object 
-
-var myObject = {
-    keyFunc : function () {}
-}   
-
-// 2,4 : Bạn có thể đặt tên để cho dễ hiểu 
-
-var value = function val () {} 
-
-
-// ======== Khái niệm về hosting , sự khác biệt giữa declaration và expresstion function 
-
-print() // Declaration bạn có thể sử dụng nó trên phần định nghĩa 
-function print() {
-    console.log( "Declaration !!!!!!")
+const value = (a, b) => {
+    return a + b;
 }
 
-// còn với Expresstion thì bạn không thể , nó sẽ báo lỗi
-
-call()  // sẽ có thông báo lỗi ở đây 
-var call = function callPrint()
-{
-    console.log("Expresstion!!!!!!")
-}
+console.log(value(2, 7))
